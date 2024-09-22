@@ -16,10 +16,9 @@ public class MeleeAttack : MonoBehaviour
     {
         animator = GetComponent<Animator>();
     }
-    // Update is called once per frame
+
     void Update()
     {
-        //Handle attack cooldown
         attackCooldownTimer -= Time.deltaTime;
     }
 
@@ -47,18 +46,20 @@ public class MeleeAttack : MonoBehaviour
                 targetHealth = other.GetComponentInParent<Health>();
             }
 
-            Debug.Log(targetHealth);
+            // Debugging information to verify collision
+            Debug.Log("Collided with: " + other.gameObject.name);
+            Debug.Log("Target Health component: " + targetHealth);
 
             if (targetHealth != null)
             {
                 targetHealth.TakeDamage(attackDamage);
+                isAttacking = false;
+                Debug.Log("Damage dealt to: " + other.gameObject.name);
+            }
+            else
+            {
+                Debug.LogWarning("Health component not found on the target!");
             }
         }
-        isAttacking = false;
-    }
-    public void EndAttack()
-    {
-        isAttacking = false;
-        Debug.Log("Melee Attack Ended");
     }
 }

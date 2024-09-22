@@ -277,7 +277,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cam: {fileID: 0}
-  moveSpeed: 8
+  moveSpeed: 10
   turnTime: 0.1
   jumpHeight: 3
   gravity: -25
@@ -310,7 +310,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 36ef7fce52190754ab0912b0ca186e56, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 100
+  maxHealth: 200
   healthBar: {fileID: 6994047506298038411}
 --- !u!95 &1795166315472283191
 Animator:
